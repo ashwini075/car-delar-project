@@ -5,6 +5,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
+import { LogoutModalComponent } from './logout-modal/logout-modal.component';
 
 const routes: Routes = [{path:'login',component:LoginComponent},
 {path:'navbar',component:NavbarComponent},
@@ -12,7 +13,7 @@ const routes: Routes = [{path:'login',component:LoginComponent},
 {path:'home',component:HomeComponent,children: [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'logout', component:  },
+  { path: 'logout', component:LogoutModalComponent  },
 ],},
 { path:'',redirectTo:'/login',pathMatch:'full'},
 { path: '**', component: PageNotFoundComponent },
