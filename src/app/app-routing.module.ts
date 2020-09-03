@@ -6,8 +6,10 @@ import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
 import { LogoutModalComponent } from './logout-modal/logout-modal.component';
+import { RegisterComponent } from './register/register.component';
 
-const routes: Routes = [{path:'login',component:LoginComponent},
+const routes: Routes = [
+{path:'login',component:LoginComponent},
 {path:'navbar',component:NavbarComponent},
 {path:'footer',component:FooterComponent},
 {path:'home',component:HomeComponent,children: [
@@ -15,8 +17,10 @@ const routes: Routes = [{path:'login',component:LoginComponent},
   { path: 'login', component: LoginComponent },
   { path: 'logout', component:LogoutModalComponent  },
 ],},
-{ path:'',redirectTo:'/login',pathMatch:'full'},
+{ path: 'register',component:RegisterComponent},
+
 { path: '**', component: PageNotFoundComponent },
+{ path:'',redirectTo:'/login',pathMatch:'full'},
 ];
 
 @NgModule({
