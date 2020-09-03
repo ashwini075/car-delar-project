@@ -11,6 +11,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { RegisterComponent } from './register/register.component';
+import { LogoutModalComponent } from './logout-modal/logout-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,9 @@ import {HttpClientModule} from '@angular/common/http';
     NavbarComponent,
     FooterComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent,
+    LogoutModalComponent
   ],
   imports: [
     BrowserModule,

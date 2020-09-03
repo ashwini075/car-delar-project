@@ -6,10 +6,15 @@ import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
 
-const routes: Routes = [{path:'Login',component:LoginComponent},
-{path:'Navbar',component:NavbarComponent},
+const routes: Routes = [{path:'login',component:LoginComponent},
+{path:'navbar',component:NavbarComponent},
 {path:'footer',component:FooterComponent},
-{path:'home',component:HomeComponent},
+{path:'home',component:HomeComponent,children: [
+  { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'logout', component:  },
+],},
+{ path:'',redirectTo:'/login',pathMatch:'full'},
 { path: '**', component: PageNotFoundComponent },
 ];
 

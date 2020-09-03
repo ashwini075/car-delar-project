@@ -1,21 +1,22 @@
 <div class="container-fluid">
-    <!-- Row 1 Navbar-->
-    <div
-      class="row bg-secondary sticky-top justify-content-between align-items-center"
-      style="height: 75px;"
-    >
-      <div class="col  d-flex flex-direction-row text-light " style="font-size: 1.25rem; font-family:cursive">
-        AutoHaven
-      </div>
-
-      <div class="col d-flex justify-content-end text-light mr-5">
-        <div><button type="button" class="btn btn-outline-info text-light mr-5">Home</button>  </div>
-        <div><button type="button" class="btn btn-outline-info text-light mr-5">Login</button>  </div>
-       <div><button type="button" class="btn btn-outline-danger text-light mr-5">Logout</button> </div> 
-      </div>
-      
-      
+  <div class="row bg-warning sticky-top" style="height: 55px">
+    <div class="col d-flex align-items-center">
+      <fa-icon
+        [icon]="faAirFreshener"
+        style="font-size: 28px; margin-right: 8px"
+      ></fa-icon>
+     AutoHaven
     </div>
+    <div class="col d-flex justify-content-end align-items-center">
+      <a class="btn btn-outline-light mr-1" routerLink="/home/">Home</a>
+      <a class="btn btn-outline-light mr-1" routerLink="/home/login">Login</a>
+    
 
-   
+      <button class="btn btn-outline-light mr-1" (click)="processLogout()">
+        Log Out
+      </button>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
 </div>
