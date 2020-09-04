@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { LogoutModalComponent } from './logout-modal/logout-modal.component';
 import { RegisterComponent } from './register/register.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 const routes: Routes = [
 {path:'login',component:LoginComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
 ],},
 { path: 'register',component:RegisterComponent},
 { path:'contact-us',component:ContactUsComponent},
+{ path:'about-us',component:AboutUsComponent},
 { path:'',redirectTo:'/login',pathMatch:'full'},
 { path: '**', component: PageNotFoundComponent },
 
