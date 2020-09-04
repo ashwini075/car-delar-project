@@ -1,22 +1,57 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-
-      <h1 class="form-signin-heading">Sign in</h1>
-      <p class="lead">Not a member? Please <a routerLink="/register" (click)="registerUser()">register</a> instead.</p>
-      
-        <div class="form-group">
-          <label for="email">Email address</label>
-          <input type="email" class="form-control" name="email" placeholder="Enter email" >
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" name="password" placeholder="Password">
-        </div>
-        <button type="submit" class="btn btn-primary" (click)="loginProcess()">Log In!</button>
-      
-    
+<div class="container-fluid">
+  <div class="row" style="height: 100vh">
+    <!-- Left Block -->
+    <div
+      class="col bg-warning d-flex flex-column justify-content-center align-items-center"
+    >
+      <div>
+        <fa-icon [icon]="facar" style="font-size: 54px"></fa-icon>
+      </div>
+      <div class="h3">Welcome to my Appplication</div>
+      <div class="h6">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid,
+        harum!
+      </div>
     </div>
-    
+
+    <!-- Right Block-->
+    <div
+      class="col bg-light d-flex flex-column justify-content-center align-items-center"
+      [formGroup]="fbFormGroup"
+    >
+      <div class="alert alert-danger" role="alert" *ngIf="uiInvalidCredential">
+        Invalid Credential ,Please provide correct details!
+      </div>
+
+      <div class="h4">Application Login</div>
+
+      <div>
+        <input
+          type="text"
+          placeholder="Enter Username"
+          class="form-control"
+          formControlName="username"
+        />
+      </div>
+
+      <div class="mt-1">
+        <input
+          type="password"
+          placeholder="Enter Password"
+          class="form-control"
+          formControlName="password"
+        />
+      </div>
+
+      <button
+        class="btn btn-sm btn-warning mt-2 mb-2"
+        [disabled]="!fbFormGroup.valid"
+        (click)="loginProcessHere()"
+      >
+        Login Here
+      </button>
+
+      <a routerLink="/register">Register Here</a>
+    </div>
   </div>
-  <app-footer></app-footer>
+</div>

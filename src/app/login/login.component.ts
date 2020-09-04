@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import{FormBuilder,
-  Validators,
-  FormGroup,
-  FormControl} from '@angular/forms';
+import{FormBuilder,Validators} from '@angular/forms';
 import { HttpClient} from '@angular/common/http';
+import { faCar} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
+ public facar =faCar;
+  public uiInvalidCredential = false;
+
   fbFormGroup = this.fb.group({
     username: ['', Validators.required],
     password: ['', Validators.required],
@@ -24,16 +24,18 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-async registerUser(){
-  const data = this.fbFormGroup.value;
-  const url='http://localhost:3600/adduser';
-  await this.http.get(url,data).toPromise();
 
-  this.fbFormGroup.reset();
-}
-loginProcess() {
-  // after suuccessful ajax call
-  sessionStorage.setItem('sid', 'true');
-  this.router.navigate(['home']);
+async loginProcessHere() {
+  const data = this.fbFormGroup.value;
+
+  // ajax call
+  const url = 'http://localhost:3600/auth-user';
+  const result: any = await this.http.post(url, data).toPromise();
+  if (result.opr) {
+    sessionStorage.setItem('sid', 'true');
+    this.router.navigate(['home']);
+  } else {
+    this.uiInvalidCredential = true;
+  }
 }
 }
