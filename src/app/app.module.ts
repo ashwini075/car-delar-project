@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { LogoutModalComponent } from './logout-modal/logout-modal.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { LogoutModalComponent } from './logout-modal/logout-modal.component';
     PageNotFoundComponent,
     HomeComponent,
     RegisterComponent,
-    LogoutModalComponent
+    LogoutModalComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
